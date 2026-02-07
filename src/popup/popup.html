@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pincer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">🦀</div>
+      <h1>Pincer</h1>
+    </header>
+
+    <div class="status-section">
+      <div class="status-indicator" id="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text" id="status-text">Disconnected</span>
+      </div>
+      <div class="tab-count" id="tab-count">0 tabs tracked</div>
+    </div>
+
+    <div class="actions">
+      <button id="connect-btn" class="btn btn-primary">Connect</button>
+      <button id="disconnect-btn" class="btn btn-secondary" style="display: none;">Disconnect</button>
+      <button id="send-context-btn" class="btn btn-secondary">Send Page Context</button>
+    </div>
+
+    <div class="settings-section">
+      <h2>Settings</h2>
+      
+      <div class="setting">
+        <label for="gateway-url">Gateway URL</label>
+        <input type="text" id="gateway-url" placeholder="ws://localhost:18789/pincer">
+      </div>
+
+      <div class="setting">
+        <label class="checkbox-label">
+          <input type="checkbox" id="auto-connect" checked>
+          Auto-connect on startup
+        </label>
+      </div>
+
+      <div class="setting">
+        <label class="checkbox-label">
+          <input type="checkbox" id="send-on-switch" checked>
+          Send context on tab switch
+        </label>
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://github.com/tprinty/pincer" target="_blank">GitHub</a>
+      <span class="version">v0.1.0</span>
+    </footer>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

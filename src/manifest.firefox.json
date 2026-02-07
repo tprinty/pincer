@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+  "name": "Pincer",
+  "version": "0.1.0",
+  "description": "Connect your browser to OpenClaw for AI-assisted browsing",
+  "icons": {
+    "16": "assets/icons/pincer-16.png",
+    "48": "assets/icons/pincer-48.png",
+    "128": "assets/icons/pincer-128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background/service-worker.js"],
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/pincer-16.png",
+      "48": "assets/icons/pincer-48.png"
+    },
+    "default_title": "Pincer - OpenClaw Browser Bridge"
+  },
+  "web_accessible_resources": [
+    "assets/*"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "pincer@openclaw.ai"
+    }
+  }
+}

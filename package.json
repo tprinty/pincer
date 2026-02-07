@@ -1,0 +1,27 @@
+{
+  "name": "pincer",
+  "version": "0.1.0",
+  "description": "Browser extension connecting your tabs to OpenClaw",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build -- --watch",
+    "build": "npm run build:chrome && npm run build:firefox",
+    "build:chrome": "node scripts/build.js chrome",
+    "build:firefox": "node scripts/build.js firefox",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "browser-extension",
+    "chrome-extension",
+    "firefox-extension",
+    "openclaw",
+    "ai-assistant"
+  ],
+  "author": "Tom Printy",
+  "license": "MIT",
+  "devDependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "@anthropic-ai/web-agent-sdk": "latest",
+    "@anthropic-ai/browser-automation": "latest"
+  }
+}
