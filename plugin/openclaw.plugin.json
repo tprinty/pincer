@@ -1,0 +1,50 @@
+{
+  "id": "pincer",
+  "name": "Pincer",
+  "description": "Browser extension bridge - connects your browser tabs to OpenClaw for AI-assisted browsing",
+  "version": "0.1.0",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "description": "Enable the Pincer WebSocket endpoint"
+      },
+      "autoAcceptTabs": {
+        "type": "boolean",
+        "description": "Automatically accept new tab connections (vs require approval)"
+      },
+      "pushContextOnSwitch": {
+        "type": "boolean",
+        "description": "Push page context to agent when user switches tabs"
+      },
+      "allowedOrigins": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Allowed origins for WebSocket connections (default: localhost only)"
+      },
+      "wsPath": {
+        "type": "string",
+        "description": "WebSocket endpoint path (default: /pincer)"
+      }
+    }
+  },
+  "uiHints": {
+    "plugins.entries.pincer": {
+      "label": "Pincer Browser Bridge",
+      "help": "Connect your browser tabs to OpenClaw via the Pincer extension"
+    },
+    "plugins.entries.pincer.enabled": {
+      "label": "Enable Pincer"
+    },
+    "plugins.entries.pincer.config.autoAcceptTabs": {
+      "label": "Auto-Accept Tabs",
+      "help": "Automatically trust new browser tab connections"
+    },
+    "plugins.entries.pincer.config.pushContextOnSwitch": {
+      "label": "Push Context on Tab Switch",
+      "help": "Send page context to the agent when you switch browser tabs"
+    }
+  }
+}

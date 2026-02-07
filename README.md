@@ -147,6 +147,18 @@ Pincer connects to OpenClaw Gateway:
 - **AI actions require confirmation** — no silent clicks
 - **Allowlist support** — restrict to specific domains
 
+## Project Structure
+
+This repo contains two components:
+
+### Browser Extension (`src/`)
+Chrome/Firefox extension that runs in your browser.
+
+### OpenClaw Plugin (`plugin/`)
+Gateway plugin that handles WebSocket connections and exposes agent tools.
+
+See [plugin/README.md](plugin/README.md) for plugin installation and configuration.
+
 ## License
 
 MIT
